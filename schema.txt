@@ -1,0 +1,8 @@
+Course ID
+Course Name
+Associated College
+Duration
+Academic requirement
+IELTS Requirement
+Intake
+Description
