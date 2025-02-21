@@ -29,7 +29,7 @@ export default function Sidebar() {
         className="w-full"
       >
         <Button className="w-full bg-transparent text-primary hover:text-white flex justify-start hover:scale-105 transition-all">
-          <BookOpen /> Careers
+          <BookOpen /> Classes
         </Button>
       </NavLink>
     </div>

@@ -10,7 +10,7 @@ import Dashboard from './(protected)/pages/dashboard';
 import CoursesAdmin from './(protected)/pages/courses';
 import PublicLayout from './publiclayout';
 import ProtectedLayout from './protectedlayout';
-import CareersAdmin from './(protected)/pages/careers';
+import CareersAdmin from './(protected)/pages/classes';
 
 function App() {
   return (

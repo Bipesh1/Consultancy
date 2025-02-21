@@ -10,35 +10,42 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-export function CourseTable({ courses }: { courses: any }) {
+import Classeditor from "./class-edit";
+export function ClassTable({
+  classes,
+  onupdate,
+}: {
+  classes: any;
+  onupdate: any;
+}) {
   return (
     <Table>
       <TableCaption>List of Courses</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Course ID</TableHead>
-          <TableHead>Course Name</TableHead>
-          <TableHead>College</TableHead>
+          <TableHead>Class Name</TableHead>
+          <TableHead>Tutor</TableHead>
           <TableHead>Duration</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {courses.map((course: any) => (
-          <TableRow key={course._id}>
+        {classes.map((cl: any) => (
+          <TableRow key={cl._id}>
             <TableCell className="font-medium flex items-center gap-x-3">
-            <Avatar>
+              <Avatar>
                 <AvatarImage
-                  src={course.thumbnail}
+                  src={cl.thumbnail}
                   alt="@shadcn"
                 />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
-              {course.name}
-              </TableCell>
-            <TableCell>{course.college}</TableCell>
-            <TableCell>{course.description}</TableCell>
-            <TableCell>{course.duration} years</TableCell>
-            <TableCell><Button>Update</Button></TableCell>
+              {cl.name}
+            </TableCell>
+            <TableCell>{cl.tutor}</TableCell>
+            <TableCell>{cl.duration}</TableCell>
+            <TableCell>
+              <Classeditor id={cl._id} onupdate={onupdate} />
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

@@ -1,5 +1,6 @@
 Course ID
 Course Name
+Thumbnail
 Associated College
 Duration
 Academic requirement

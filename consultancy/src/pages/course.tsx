@@ -1,7 +1,15 @@
+import { AnimatedBackground } from '@/components/sections/animated-background'
+import Courseherosection from '@/components/sections/course-hero-section'
+import CoursesList from '@/components/sections/course-list-section'
 import React from 'react'
 
 export default function Course() {
   return (
-    <div>C</div>
+    <div className='overflow-x-hidden'>
+      <AnimatedBackground/>
+      <Courseherosection/>
+      <CoursesList/>
+
+    </div>
   )
 }

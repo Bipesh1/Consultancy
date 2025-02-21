@@ -74,7 +74,7 @@ const contactMethods = [
         />
       </svg>
     ),
-    contact: "Suryabinayak, Bhaktapur",
+    contact: "Maha Ananga Niwas, Putalisadak",
     title: "Our office",
   },
   {
@@ -114,7 +114,7 @@ const contactMethods = [
         />
       </svg>
     ),
-    contact: "info@awalandsons.com , puruawal@gmail.com",
+    contact: "inquiry@nepalec.edu.np",
     title: "Email",
   },
 ];
