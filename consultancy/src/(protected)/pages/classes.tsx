@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useTransition } from "react";
 import Classcreate from "../components/class-create";
 import { ClassTable } from "../components/class-table";
-import { SignedOut } from "@clerk/clerk-react";
+
 
 export default function ClassAdmin() {
   const [classes, setClasses] = useState<any>([]);
@@ -31,8 +31,9 @@ export default function ClassAdmin() {
   }
   return (
     <div className="md:px-5">
-      <SignedOut/>
+ 
        <Classcreate onupdate={fetchClasses} />
+     
       <ClassTable classes={classes} onupdate={fetchClasses} />
     </div>
   );

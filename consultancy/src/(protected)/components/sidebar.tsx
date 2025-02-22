@@ -3,10 +3,12 @@ import logo from "@/assets/images/1.png";
 import { Book } from "lucide-react";
 import { BookOpen } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { UserButton } from "@clerk/clerk-react";
 
 export default function Sidebar() {
   return (
     <div className="hidden w-1/6 md:flex md:flex-col md:items-center py-5 md:space-y-5 px-2">
+      
       <div className="w-full flex flex-col items-center space-y-3">
         <img src={logo} alt="NEC" width={70} height={70} />
         <p className="text-base text-primary">
@@ -38,6 +40,9 @@ export default function Sidebar() {
           <BookOpen /> Users
         </Button>
       </NavLink>
+      <div className="mt-auto pb-5">
+        <UserButton/>
+      </div>
     </div>
   );
 }
