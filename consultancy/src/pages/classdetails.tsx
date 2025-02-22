@@ -12,7 +12,7 @@ export default function Classdetails() {
 
     useEffect(()=>{
             startTransition(async ()=>{
-                const response= await axios.get(`${import.meta.env.VITE_API_URL}/courses/${id}`)
+                const response= await axios.get(`${import.meta.env.VITE_API_URL}/classes/${id}`)
                 console.log(response)
                 setClassDetails(response.data)
             })
