@@ -13,7 +13,6 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: [
-    "http://localhost:5174",
     "https://consultancy-jt4k.vercel.app",
   ],
   allowedHeaders: ["Content-Type", "Authorization"],

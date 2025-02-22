@@ -29,7 +29,7 @@ import { z } from "zod";
 
 export default function Courseedit({ onupdate,id }: { onupdate: any,id:string }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [_, setImagePreview] = useState<string | null>();
+  const [imagePreview, setImagePreview] = useState<string | null>();
   const [isPending, startTransition] = useTransition();
   const [image, setImage] = useState<File | undefined | null>();
   const [course,setCourse]=useState<any>()
@@ -168,13 +168,20 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
                         htmlFor="dropzone-file"
                         className="flex flex-col items-center justify-center w-full h-52 border border-dashed rounded-lg cursor-pointer"
                       >
-                        {course?.thumbnail ? (
+                        {(course?.thumbnail && !imagePreview) ? (
                           <img
                             src={course.thumbnail}
                             alt="Preview"
                             className="w-full h-full object-cover rounded-lg"
                           />
                         ) : (
+                          imagePreview?(
+                            <img
+                            src={imagePreview}
+                            alt="Preview"
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                          ):(
                           <div className="flex flex-col items-center space-y-2">
                             <Upload className="h-10 w-10 text-gray-400" />
                             <span className="font-semibold">
@@ -184,6 +191,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
                               SVG, PNG, JPG or GIF (MAX. 800x400px)
                             </span>
                           </div>
+                          )
                         )}
                         <Input
                           id="dropzone-file"
