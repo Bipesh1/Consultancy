@@ -15,7 +15,7 @@ export default function CoursesList() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('https://consultancy-tan.vercel.app/courses');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/courses`);
 
         setCourses(response.data);
       } catch (err) {

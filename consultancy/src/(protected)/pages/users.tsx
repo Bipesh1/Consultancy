@@ -8,9 +8,7 @@ export default function UserAdmin() {
     
     useEffect(()=>{
         startTransition(async()=>{
-            const response =await axios.get(`${import.meta.env.VITE_API_URL}/users`,{
-                withCredentials:true
-            })
+            const response =await axios.get(`${import.meta.env.VITE_API_URL}/users`)
             console.log(response)
             setUsers(response.data)
         })

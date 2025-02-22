@@ -7,9 +7,7 @@ export default function CoursesAdmin() {
   const [courses, setCourses] = useState<any>([]);
   const fetchCourses = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/courses`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/courses`);
       setCourses(response.data); // Update courses state
     } catch (err) {
       console.error("Failed to fetch courses:", err);

@@ -90,10 +90,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
 
          await axios.post(
           `${import.meta.env.VITE_API_URL}/courses/`,
-          courseData,
-          {
-            withCredentials: true,
-          }
+          courseData
         );
         onupdate();
         // Reset form on success

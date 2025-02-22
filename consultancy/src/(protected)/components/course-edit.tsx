@@ -38,9 +38,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
     const fetchCourse=async()=>{
 
         startTransition(async () => {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/courses/${id}`, {
-                withCredentials: true,
-            });
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/courses/${id}`);
             console.log(response)
             setCourse(response.data)
             if (response.data) {
@@ -117,10 +115,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
 
        await axios.put(
           `${import.meta.env.VITE_API_URL}/courses/${id}`,
-          courseData,
-          {
-            withCredentials: true,
-          }
+          courseData
         );
         onupdate();
         // Reset form on success

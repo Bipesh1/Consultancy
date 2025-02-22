@@ -20,9 +20,7 @@ export default function Coursedelete({id,onupdate}:{
     const [_,startTransition]= useTransition()
     const handleDelete=()=>{
         startTransition(async()=>{
-            const response= await axios.delete(`${import.meta.env.VITE_API_URL}/courses/${id}`,{
-                withCredentials:true
-            })
+            const response= await axios.delete(`${import.meta.env.VITE_API_URL}/courses/${id}`)
             if(response.status==200){
                 setIsOpen(false)
                 onupdate()

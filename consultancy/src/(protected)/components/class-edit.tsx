@@ -49,9 +49,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
     const fetchClass=async()=>{
 
         startTransition(async () => {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/classes/${id}`, {
-                withCredentials: true,
-            });
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/classes/${id}`);
             console.log(response)
             setCclass(response.data)
             if (response.data) {
@@ -156,10 +154,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
   
         const response = await axios.put(
           `${import.meta.env.VITE_API_URL}/classes/${id}`,
-          classData,
-          {
-            withCredentials: true,
-          }
+          classData
         );
         console.log(response)
         onupdate()

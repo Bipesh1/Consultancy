@@ -110,10 +110,7 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
 
          await axios.post(
           `${import.meta.env.VITE_API_URL}/classes`,
-          classData,
-          {
-            withCredentials: true,
-          }
+          classData
         );
         onupdate();
         form.reset();

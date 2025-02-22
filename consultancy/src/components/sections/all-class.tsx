@@ -11,9 +11,7 @@ function AllClass() {
   const [_,startTransition]= useTransition()
   useEffect(()=>{
       startTransition(async()=>{
-        const response= await axios.get(`${import.meta.env.VITE_API_URL}/classes`,{
-          withCredentials:true
-        })
+        const response= await axios.get(`${import.meta.env.VITE_API_URL}/classes`)
         console.log(response)
         setClasses(response.data)
       })
