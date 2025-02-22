@@ -13,8 +13,11 @@ const app = express();
 // CORS configuration
 app.use(
   cors({
-    origin: ["http://localhost:5174","https://consultancy-dfef.vercel.app","https://consultancy-jt4k.vercel.app"], // Allow all origins (adjust as needed)
+    origin: ["http://localhost:5174","https://consultancy-dfef.vercel.app","https://consultancy-jt4k.vercel.app"],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
+    optionsSuccessStatus: 200,
+    preflightContinue: false // Allow all origins (adjust as needed),
   })
 );
 
