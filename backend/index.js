@@ -13,7 +13,7 @@ const app = express();
 // CORS configuration
 app.use(
   cors({
-    origin: "*", // Allow all origins (adjust as needed)
+    origin: ["http://localhost:5174","https://consultancy-dfef.vercel.app"], // Allow all origins (adjust as needed)
     credentials: true,
   })
 );

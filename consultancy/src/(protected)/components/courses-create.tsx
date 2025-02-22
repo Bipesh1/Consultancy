@@ -89,7 +89,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
         };
 
          await axios.post(
-          "http://localhost:3001/courses/",
+          `${import.meta.env.VITE_API_URL}/courses/`,
           courseData,
           {
             withCredentials: true,

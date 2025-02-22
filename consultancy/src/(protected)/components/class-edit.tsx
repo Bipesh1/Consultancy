@@ -155,7 +155,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
         console.log("it is",classData);
   
         const response = await axios.put(
-          `http://localhost:3001/classes/${id}`,
+          `${import.meta.env.VITE_API_URL}/classes${id}`,
           classData,
           {
             withCredentials: true,

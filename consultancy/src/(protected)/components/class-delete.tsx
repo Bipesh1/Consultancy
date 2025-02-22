@@ -22,7 +22,7 @@ export default function Classdelete({id,onupdate}:{
         console.log("hello")
         startTransition(async()=>{
             console.log("Hello")
-            const response= await axios.delete(`http://localhost:3001/classes/${id}`,{
+            const response= await axios.delete( `${import.meta.env.VITE_API_URL}/classes/${id}`,{
                 withCredentials:true
             })
             if(response.status==200){

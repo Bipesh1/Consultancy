@@ -8,7 +8,7 @@ export default function UserAdmin() {
     
     useEffect(()=>{
         startTransition(async()=>{
-            const response =await axios.get("http://localhost:3001/users",{
+            const response =await axios.get(`${import.meta.env.VITE_API_URL}/users`,{
                 withCredentials:true
             })
             console.log(response)

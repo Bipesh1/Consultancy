@@ -38,7 +38,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
     const fetchCourse=async()=>{
 
         startTransition(async () => {
-            const response = await axios.get(`http://localhost:3001/courses/${id}`, {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/courses/${id}`, {
                 withCredentials: true,
             });
             console.log(response)

@@ -109,7 +109,7 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
         console.log(classData)
 
          await axios.post(
-          "http://localhost:3001/classes",
+          `${import.meta.env.VITE_API_URL}/classes`,
           classData,
           {
             withCredentials: true,
