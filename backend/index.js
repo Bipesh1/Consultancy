@@ -26,8 +26,10 @@ app.use("/classes", classRouter);
 app.use("/users", userRouter);
 
 // Serve static files from the client build directory
-const clientBuildPath = path.join(__dirname, "../consultancy"); // Adjust the path to your client public directory
+const clientBuildPath = path.join(__dirname, "../consultancy");
 app.use(express.static(clientBuildPath));
+console.log("this is " + clientBuildPath)
+console.log("hello")
 
 // Fallback to index.html for client-side routing
 app.get("*", (req, res) => {
