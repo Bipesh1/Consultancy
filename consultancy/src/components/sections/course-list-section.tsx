@@ -1,6 +1,7 @@
-import { BookOpen, Clock, Filter, GraduationCap, MapPin, Search } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import  { useState, useEffect } from 'react';
+import { Search, BookOpen, GraduationCap, Filter, Clock, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -14,10 +15,8 @@ export default function CoursesList() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('https://consultancy-tan.vercel.app/courses');
-        if (!response.ok) throw new Error('Failed to fetch courses');
-        const data = await response.json();
-        setCourses(data);
+        const response = await axios.get('https://consultancy-tan.vercel.app/courses');
+        setCourses(response.data);
       } catch (err) {
         setError('Failed to load courses. Please try again later.');
       } finally {
