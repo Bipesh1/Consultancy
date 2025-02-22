@@ -4,7 +4,7 @@ import { UserTable } from '../components/user-table'
 
 export default function UserAdmin() {
     const [users,setUsers]=useState<any>([])
-    const [_,startTransition]= useTransition()
+    const [isPending,startTransition]= useTransition()
     
     useEffect(()=>{
         startTransition(async()=>{
@@ -13,6 +13,14 @@ export default function UserAdmin() {
             setUsers(response.data)
         })
     },[])
+
+    if (isPending) {
+        return (
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-900"></div>
+          </div>
+        );
+      }
   return (
    <UserTable users={users}/>
   )

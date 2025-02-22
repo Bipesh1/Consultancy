@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function AllClass() {
 
   const [classes,setClasses]= useState<any>([])
-  const [_,startTransition]= useTransition()
+  const [isPending,startTransition]= useTransition()
   useEffect(()=>{
       startTransition(async()=>{
         const response= await axios.get(`${import.meta.env.VITE_API_URL}/classes`)
@@ -16,6 +16,14 @@ function AllClass() {
         setClasses(response.data)
       })
   },[])
+  
+   if (isPending) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-900"></div>
+      </div>
+    );
+  }
   return (
     <>
       <div className="space-y-4 py-10">
