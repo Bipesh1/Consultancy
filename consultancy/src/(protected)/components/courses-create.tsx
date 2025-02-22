@@ -1,9 +1,8 @@
-import React from "react";
+
 import {
   Sheet,
   SheetTrigger,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
@@ -65,7 +64,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
         const uniqueFileName = `${slugifiedName}-${uniqueId}.png`;
 
         // Upload image
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const {  error: uploadError } = await supabase.storage
           .from("classes")
           .upload(`class/${uniqueFileName}`, image);
 
@@ -89,7 +88,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
           thumbnail: urlData.publicUrl,
         };
 
-        const response = await axios.post(
+         await axios.post(
           "http://localhost:3001/courses/",
           courseData,
           {
@@ -138,7 +137,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
             <FormField
               control={form.control}
               name="thumbnail"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Category thumbnail</FormLabel>
                   <FormControl>

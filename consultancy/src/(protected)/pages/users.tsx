@@ -4,7 +4,7 @@ import { UserTable } from '../components/user-table'
 
 export default function UserAdmin() {
     const [users,setUsers]=useState<any>([])
-    const [isPending,startTransition]= useTransition()
+    const [_,startTransition]= useTransition()
     
     useEffect(()=>{
         startTransition(async()=>{

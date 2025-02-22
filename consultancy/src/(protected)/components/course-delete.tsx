@@ -10,14 +10,14 @@ import {
   } from "@/components/ui/dialog"
 import axios from "axios"
 
-import React, { useState, useTransition } from 'react'
+import { useState, useTransition } from 'react'
 
 export default function Coursedelete({id,onupdate}:{
     id:string,
     onupdate:any
 }) {
     const [isOpen,setIsOpen]= useState<boolean>(false)
-    const [isPending,startTransition]= useTransition()
+    const [_,startTransition]= useTransition()
     const handleDelete=()=>{
         startTransition(async()=>{
             const response= await axios.delete(`http://localhost:3001/courses/${id}`,{

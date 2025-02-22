@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { z } from "zod";
 
 export default function Inquiryform() {
-  const [isPending,startTransition]= useTransition()
+  const [_,startTransition]= useTransition()
     const form = useForm<z.infer<typeof userFormSchema>>({
       resolver: zodResolver(userFormSchema),
       defaultValues: {

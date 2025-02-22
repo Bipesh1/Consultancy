@@ -72,12 +72,12 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
         const uniqueFileName2 = `${slugifiedName}-${uniqueId2}.png`;
 
         // Upload image
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const {error: uploadError } = await supabase.storage
           .from("classes")
           .upload(`class/${uniqueFileName1}`, imageThumbnail);
 
         // Upload image
-        const { data: uploadDataTutor, error: uploadErrorTutor } =
+        const { error: uploadErrorTutor } =
           await supabase.storage
             .from("classes")
             .upload(`class/${uniqueFileName2}`, imageTutorThumbnail);
@@ -108,7 +108,7 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
         };
         console.log(classData)
 
-        const response = await axios.post(
+         await axios.post(
           "http://localhost:3001/classes",
           classData,
           {
@@ -158,7 +158,7 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
             <FormField
               control={form.control}
               name="thumbnail"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Class thumbnail</FormLabel>
                   <FormControl>
@@ -224,7 +224,7 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
             <FormField
               control={form.control}
               name="tutorthumbnail"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Tutor thumbnail</FormLabel>
                   <FormControl>

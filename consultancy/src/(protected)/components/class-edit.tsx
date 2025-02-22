@@ -98,7 +98,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
           const uniqueFileName1 = `${slugifiedName}-${uniqueId1}.png`;
   
           // Upload new thumbnail image
-          const { data: uploadData, error: uploadError } = await supabase.storage
+          const { error: uploadError } = await supabase.storage
             .from("classes")
             .upload(`class/${uniqueFileName1}`, imageThumbnail);
   
@@ -125,7 +125,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
           const uniqueFileName2 = `${slugifiedName}-${uniqueId2}.png`;
   
           // Upload new tutor thumbnail image
-          const { data: uploadDataTutor, error: uploadErrorTutor } =
+          const {  error: uploadErrorTutor } =
             await supabase.storage
               .from("classes")
               .upload(`class/${uniqueFileName2}`, imageTutorThumbnail);
@@ -207,7 +207,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
             <FormField
               control={form.control}
               name="thumbnail"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Class thumbnail</FormLabel>
                   <FormControl>
@@ -282,7 +282,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
             <FormField
               control={form.control}
               name="tutorthumbnail"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Tutor thumbnail</FormLabel>
                   <FormControl>

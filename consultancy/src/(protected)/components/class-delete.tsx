@@ -17,7 +17,7 @@ export default function Classdelete({id,onupdate}:{
     onupdate:any
 }) {
     const [isOpen,setIsOpen]= useState<boolean>(false)
-    const [isPending,startTransition]= useTransition()
+    const [_,startTransition]= useTransition()
     const handleDelete=()=>{
         console.log("hello")
         startTransition(async()=>{

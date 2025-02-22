@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 export default function Classdetails() {
     const {id}=useParams()
     const [classDetails, setClassDetails]= useState<any>()
-    const [isPending,startTransition]= useTransition()
+    const [_,startTransition]= useTransition()
 
     useEffect(()=>{
             startTransition(async ()=>{
