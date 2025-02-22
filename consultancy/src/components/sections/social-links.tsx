@@ -39,7 +39,7 @@ export default function SocialLinks() {
 const connects = [
     {
       name: "Facebook",
-      href: "https://www.facebook.com/softyhygiene.np",
+      href: "#",
       icons: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const connects = [
   
     {
       name: "Messanger",
-      href: "https://www.facebook.com/softyhygiene.np",
+      href: "#",
       icons: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const connects = [
     },
     {
       name: "Instagram",
-      href: "https://www.instagram.com/softy_hygiene/",
+      href: "#",
       icons: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@ const connects = [
   
     {
       name: "Whatsapp",
-      href: "https://api.whatsapp.com/send?phone=%2B9779851073552&context=ARBWBVhZV2RY_YxdeetUKWZjFwrCFZ1dOOi0-rbnrJTgKcGBjPaEy25TpnbsJZI93S8Qg5H0n-7AJxZhS-h1Zf8lbaF6IijOyVydBC8tPUVl4JknHyJ8phWWYFx4C3DpwFnDDgJM7uc2Im99a_fHj8q4PQ&source=FB_Page&app=facebook&entry_point=page_cta",
+      href: "#",
       icons: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

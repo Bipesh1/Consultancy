@@ -24,10 +24,10 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <button>
               <Link
-                to="/studyabroad"
+                to="/"
                 className="text-white/90 hover:text-white transition-colors" 
               >
-                Study Abroad
+                Home
               </Link>
             </button>
 
@@ -46,15 +46,6 @@ export default function Navigation() {
                 className="text-white/90 hover:text-white transition-colors" 
               >
                 Courses
-              </Link>
-            </button>
-
-            <button>
-              <Link
-                to="/blog"
-                className="text-white/90 hover:text-white transition-colors" 
-              >
-                Blog
               </Link>
             </button>
 
