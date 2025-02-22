@@ -40,7 +40,7 @@ export default function Sidebar() {
           <BookOpen /> Users
         </Button>
       </NavLink>
-      <div className="mt-auto pb-5">
+      <div className="mt-auto flex items-end flex-1 pb-5">
         <UserButton/>
       </div>
     </div>
