@@ -7,7 +7,7 @@ import { UserButton } from "@clerk/clerk-react";
 
 export default function Sidebar() {
   return (
-    <div className="hidden w-1/6 md:flex md:flex-col md:items-center py-5 md:space-y-5 px-2">
+    <div className="hidden w-1/6 md:flex md:flex-col md:items-center py-5 md:space-y-5 px-2 h-screen">
       
       <div className="w-full flex flex-col items-center space-y-3">
         <img src={logo} alt="NEC" width={70} height={70} />
