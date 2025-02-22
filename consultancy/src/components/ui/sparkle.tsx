@@ -1,6 +1,6 @@
-import { useEffect, useId, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import { useEffect, useId, useState } from 'react';
 
 interface SparklesProps {
   className?: string;
@@ -35,7 +35,6 @@ export function Sparkles({
   mousemove = false,
   hover = false,
   background = 'transparent',
-  options = {},
 }: SparklesProps) {
   const [isReady, setIsReady] = useState(false);
 

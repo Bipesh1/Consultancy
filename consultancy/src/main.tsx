@@ -1,11 +1,9 @@
+import { ClerkProvider } from '@clerk/clerk-react'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter} from 'react-router-dom'
-import './index.css'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
-import Navigation from './components/sections/navigation.tsx'
-import Sparklefooter from './components/sections/sparkle-footer.tsx'
-import { ClerkProvider, useUser } from '@clerk/clerk-react'
+import './index.css'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 if (!PUBLISHABLE_KEY) {
