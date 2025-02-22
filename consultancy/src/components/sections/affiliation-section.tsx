@@ -13,7 +13,7 @@ export default function AffiliationSection() {
           className="flex flex-col justify-center items-start gap-10"
         >
           <div className="flex flex-col justify-start items-start gap-4">
-            <h2 className="text-primary text-4xl font-bold font-manrope leading-normal">
+            <h2 className="text-primary text-3xl md:text-4xl font-bold font-manrope leading-normal">
               Our{" "}
               <span className="text-blue-900">
                 Affiliations

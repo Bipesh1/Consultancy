@@ -8,29 +8,25 @@ export default function MobileSidebar() {
   const navigations = [
     {
       name: "Home",
-      href: "#home",
+      href: "/home",
     },
 
     {
-      name: "Categories",
-      href: "/categories",
+      name: "Classes",
+      href: "/classes",
    
     },
 
     {
-      name: "Products",
-      href: "/products",
+      name: "Courses",
+      href: "/course",
     },
 
     {
       name: "Contact",
-      href: "/contact-us",
+      href: "/contact",
     },
 
-    {
-        name: "Dealer Locator",
-        href: "/dealer-locator",
-      },
   ];
   return (
     <Sheet>

@@ -129,7 +129,7 @@ export default function OurCourse() {
               
                 {/* Overlay Content (Text + Button) */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/40">
-                  <h2 className="text-2xl font-bold mb-4">{data.title}</h2>
+                  <h2 className=" text-xl md:text-2xl font-bold mb-4">{data.title}</h2>
                   <button className="button">
                     {data.button}
                     <svg fill="currentColor" viewBox="0 0 24 24" className="icon">

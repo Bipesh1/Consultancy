@@ -66,7 +66,7 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4">
         {/* Section Heading */}
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold">
             Discover the <span className="text-blue-900">Nepal Education</span> Advantage
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">Make your study abroad journey hassle-free with our range of services. Schedule your free career counselling session</p>

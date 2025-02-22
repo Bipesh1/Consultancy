@@ -22,7 +22,7 @@ export default function AboutUsSection() {
               <h6 className="text-lg font-normal leading-relaxed text-blue-900">
                 About Us
               </h6>
-              <h2 className="text-primary text-4xl font-bold font-manrope leading-normal">
+              <h2 className="text-primary text-3xl md:text-4xl font-bold font-manrope leading-normal">
                 Welcome To{" "}
                 <span className="text-blue-900">
                   Nepal Education Consultancy

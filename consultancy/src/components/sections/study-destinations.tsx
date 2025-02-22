@@ -13,7 +13,7 @@ export default function StudyDestination() {
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
-      className="container mx-auto h-screen py-20 "
+      className="container mx-auto h-screen py-20 hidden md:block"
     >
     
       <div className="container flex flex-col mx-auto px-4 gap-3">
