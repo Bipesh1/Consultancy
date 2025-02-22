@@ -11,7 +11,7 @@ function AllClass() {
   const [_,startTransition]= useTransition()
   useEffect(()=>{
       startTransition(async()=>{
-        const response= await axios.get("https://consultancy-dfef.vercel.app/classes",{
+        const response= await axios.get("https://consultancy-tan.vercel.app//classes",{
           withCredentials:true
         })
         console.log(response)
