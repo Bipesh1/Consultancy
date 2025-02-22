@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState, useTransition } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import { UserTable } from '../components/user-table'
 
 export default function UserAdmin() {

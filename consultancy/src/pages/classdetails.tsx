@@ -1,9 +1,9 @@
-import axios from 'axios'
-import React, { useEffect, useState, useTransition } from 'react'
-import { useParams } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import ClassDetailsSection from '@/components/sections/class-details-section'
 import FromOurTutorSection from '@/components/sections/from-our-tutor-section'
+import axios from 'axios'
+import { motion } from 'framer-motion'
+import { useEffect, useState, useTransition } from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function Classdetails() {
     const {id}=useParams()

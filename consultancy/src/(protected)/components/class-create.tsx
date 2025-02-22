@@ -1,18 +1,4 @@
-import React from "react";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { LoaderCircle } from "lucide-react";
-import { Save } from "lucide-react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Upload } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -21,17 +7,26 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { classFormSchema } from "@/formschemas/class";
-import { z } from "zod";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { Label } from "@/components/ui/label";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from "@/components/ui/sheet";
+import { Textarea } from "@/components/ui/textarea";
+import { classFormSchema } from "@/formschemas/class";
 import { supabase } from "@/lib/supabase";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { LoaderCircle, Save, Upload } from "lucide-react";
+import { useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
 import slugify from "react-slugify";
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-import { useTransition } from "react";
-import { Textarea } from "@/components/ui/textarea";
+import { z } from "zod";
 
 export default function Classcreate({ onupdate }: { onupdate: any }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);

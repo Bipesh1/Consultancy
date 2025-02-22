@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
   TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
+  TableCell, TableHead,
   TableHeader,
-  TableRow,
+  TableRow
 } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Courseedit from "./course-edit";

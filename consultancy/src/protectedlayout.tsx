@@ -1,8 +1,6 @@
-import { Outlet } from "react-router-dom";
+import { RedirectToSignIn, SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
+import { Navigate, Outlet } from "react-router-dom";
 import Sidebar from "./(protected)/components/sidebar";
-import { useUser, RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
-import { LoaderCircleIcon } from "lucide-react";
-import { Navigate } from "react-router-dom";
 
 const ProtectedLayout = () => {
   const { user, isLoaded } = useUser();

@@ -4,10 +4,8 @@ import { AnimatedBackground } from '@/components/sections/animated-background'
 import { FeaturesSection } from '@/components/sections/features-sections'
 import Herosection from '@/components/sections/hero-section'
 import OurCourse from '@/components/sections/our-courses-section'
-import Sparklefooter from '@/components/sections/sparkle-footer'
 import StudyDestination from '@/components/sections/study-destinations'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
-import React from 'react'
 
 export default function Home() {
   return (

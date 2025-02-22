@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { CourseTable } from "../components/courses-table";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import Coursescreate from "../components/courses-create";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import Coursescreate from "../components/courses-create";
+import { CourseTable } from "../components/courses-table";
 
 export default function CoursesAdmin() {
   const [courses, setCourses] = useState<any>([]);

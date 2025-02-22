@@ -1,18 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
-import Navigation from './components/sections/navigation';
-import Studyabroad from './pages/studyabroad';
-import Home from './pages/home';
-import Contact from './pages/contact';
-import Class from './pages/class';
-import Course from './pages/course';
-import Blog from './pages/blog';
-import Dashboard from './(protected)/pages/dashboard';
-import CoursesAdmin from './(protected)/pages/courses';
-import PublicLayout from './publiclayout';
-import ProtectedLayout from './protectedlayout';
+import { Route, Routes } from 'react-router-dom';
 import CareersAdmin from './(protected)/pages/classes';
+import CoursesAdmin from './(protected)/pages/courses';
+import Dashboard from './(protected)/pages/dashboard';
 import UserAdmin from './(protected)/pages/users';
+import Blog from './pages/blog';
+import Class from './pages/class';
 import Classdetails from './pages/classdetails';
+import Contact from './pages/contact';
+import Course from './pages/course';
+import Home from './pages/home';
+import Studyabroad from './pages/studyabroad';
+import ProtectedLayout from './protectedlayout';
+import PublicLayout from './publiclayout';
 
 function App() {
   return (

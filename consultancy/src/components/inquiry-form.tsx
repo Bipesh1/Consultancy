@@ -1,11 +1,10 @@
-import React from 'react'
-import logo from "@/assets/images/1.png"
-import { userFormSchema } from '@/formschemas/user'
-import { useForm } from 'react-hook-form';
+import logo from "@/assets/images/1.png";
+import { userFormSchema } from '@/formschemas/user';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {z} from "zod"
-import { useTransition } from "react";
 import axios from 'axios';
+import { useTransition } from "react";
+import { useForm } from 'react-hook-form';
+import { z } from "zod";
 
 export default function Inquiryform() {
   const [isPending,startTransition]= useTransition()
