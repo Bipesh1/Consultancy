@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, BookOpen, GraduationCap, Filter, Clock, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -149,9 +150,11 @@ export default function CoursesList() {
                     <span>{course.college}</span>
                   </div>
                 </div>
+                <Link to={'/classes'}>
                 <button className="mt-4 w-full bg-blue-900 text-white py-2 rounded-lg hover:bg-blue-800 transition-colors">
-                  Learn More
+                  Inquiry Now
                 </button>
+                </Link>
               </div>
             </div>
           ))}

@@ -73,8 +73,17 @@ router.put("/:id", async(req, res) => {
   }
 });
 
-router.delete("/:id", (req, res) => {
-  res.send(`Course with ID: ${req.params.id} deleted`);
+router.delete("/:id",async (req, res) => {
+  try{
+    const id= req.params.id
+    const deletedClass= await Class.findOneAndDelete({_id:id})
+    if (!deletedClass) {
+      return res.status(404).json({ message: "Classnot found" });
+    }
+    res.status(200).json({ message: `Class with ID: ${id} deleted successfully`, deletedClass });
+  }catch(error){
+    res.status(500).json({ message: "Error deleting course", error });
+  }
 });
 
 module.exports = router;

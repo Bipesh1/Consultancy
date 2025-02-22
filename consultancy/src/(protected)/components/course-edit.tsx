@@ -26,24 +26,54 @@ import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { supabase } from "@/lib/supabase";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import slugify from "react-slugify";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { useTransition} from "react";
 
-export default function Coursescreate({ onupdate }: { onupdate: any }) {
+export default function Courseedit({ onupdate,id }: { onupdate: any,id:string }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [imagePreview, setImagePreview] = useState<string | null>();
   const [isPending, startTransition] = useTransition();
   const [image, setImage] = useState<File | undefined | null>();
+  const [course,setCourse]=useState<any>()
+
+  useEffect(() => {
+    const fetchCourse=async()=>{
+
+        startTransition(async () => {
+            const response = await axios.get(`http://localhost:3001/courses/${id}`, {
+                withCredentials: true,
+            });
+            console.log(response)
+            setCourse(response.data)
+            if (response.data) {
+                form.reset({
+                    courseName: response.data.name,
+                    thumbnail: response.data.thumbnail,
+                    duration: response.data.duration,
+                    associated_college: response.data.college,
+                    academic_requirement: response.data.academic_requirement,
+                    ielts_requirement: response.data.ielts_requirement,
+                    description: response.data.description,
+                    intake:response.data.intake,
+
+                });
+            }
+        });
+    }
+    if(isOpen){
+        fetchCourse()
+    }
+  }, [isOpen,id]);
   
   const form = useForm<z.infer<typeof courseFormSchema>>({
     resolver: zodResolver(courseFormSchema),
     defaultValues: {
       courseName: "",
       associated_college: "",
-      duration: "",
+      duration: 2,
       academic_requirement: "",
       ielts_requirement: "",
       intake: "",
@@ -53,13 +83,12 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
 
   const onSubmit = (values: z.infer<typeof courseFormSchema>) => {
     try {
-      if (!image) {
-
-        return;
-      }
-
       startTransition(async () => {
+        let thumbnailUrl= course?.thumbnail
         // Create unique filename
+        if(image){
+
+        
         const slugifiedName = slugify(values.courseName);
         const uniqueId = uuidv4();
         const uniqueFileName = `${slugifiedName}-${uniqueId}.png`;
@@ -82,15 +111,17 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
         if (!urlData?.publicUrl) {
           throw new Error("Failed to get public URL");
         }
+        thumbnailUrl= urlData.publicUrl
+    }
 
         // Submit course data
         const courseData = {
           ...values,
-          thumbnail: urlData.publicUrl,
+          thumbnail: thumbnailUrl,
         };
 
-        const response = await axios.post(
-          "http://localhost:3001/courses/",
+        const response = await axios.put(
+          `http://localhost:3001/courses/${id}`,
           courseData,
           {
             withCredentials: true,
@@ -99,6 +130,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
         onupdate();
         // Reset form on success
         form.reset();
+        setIsOpen(false)
         setImage(null);
         setImagePreview(null);
       });
@@ -108,10 +140,10 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
   };
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger className="float-end"><Button>Create</Button></SheetTrigger>
+      <SheetTrigger className="float-end"><Button>Update</Button></SheetTrigger>
       <SheetContent className="overflow-y-scroll">
         <SheetHeader>
-          <SheetTitle>Create a Course</SheetTitle>
+          <SheetTitle>Update a Course</SheetTitle>
         </SheetHeader>
         <Form {...form}>
           <form
@@ -146,9 +178,9 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
                         htmlFor="dropzone-file"
                         className="flex flex-col items-center justify-center w-full h-52 border border-dashed rounded-lg cursor-pointer"
                       >
-                        {imagePreview ? (
+                        {course?.thumbnail ? (
                           <img
-                            src={imagePreview}
+                            src={course.thumbnail}
                             alt="Preview"
                             className="w-full h-full object-cover rounded-lg"
                           />
@@ -268,7 +300,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
               ) : (
                 <Save size={16} />
               )}
-              Create Courses
+              Update Courses
             </Button>
           </form>
         </Form>

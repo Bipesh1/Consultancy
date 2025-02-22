@@ -10,13 +10,14 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-export function CourseTable({ courses }: { courses: any }) {
+import Courseedit from "./course-edit";
+import Coursedelete from "./course-delete";
+export function CourseTable({ courses,onupdate }: { courses: any,onupdate:any }) {
   return (
     <Table>
       <TableCaption>List of Courses</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Course ID</TableHead>
           <TableHead>Course Name</TableHead>
           <TableHead>College</TableHead>
           <TableHead>Duration</TableHead>
@@ -38,7 +39,8 @@ export function CourseTable({ courses }: { courses: any }) {
             <TableCell>{course.college}</TableCell>
             <TableCell>{course.description}</TableCell>
             <TableCell>{course.duration} years</TableCell>
-            <TableCell><Button>Update</Button></TableCell>
+            <TableCell><Courseedit id={course._id} onupdate={onupdate}/></TableCell>
+            <TableCell><Coursedelete id={course._id} onupdate={onupdate}/></TableCell>
           </TableRow>
         ))}
       </TableBody>

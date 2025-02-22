@@ -14,10 +14,7 @@ export const courseFormSchema = z.object({
     .min(2, { message: "Associated college name must be at least 2 characters." })
     .max(100, { message: "Associated college name must be at most 100 characters." }),
 
-  duration: z
-    .string()
-    .min(1, { message: "Duration is required." })
-    .max(20, { message: "Duration must be at most 20 characters." }),
+    duration:z.coerce.number().min(1, { message: "Duration must provided." }),
 
   academic_requirement: z
     .string()

@@ -122,6 +122,7 @@ export default function Classcreate({ onupdate }: { onupdate: any }) {
         );
         onupdate();
         form.reset();
+        setIsOpen(false)
         setImageThumbnail(null);
         setImageTutorThumbnail(null);
         setImagePreviewThumbnail(null);

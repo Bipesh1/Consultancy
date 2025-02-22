@@ -6,6 +6,7 @@ import class3 from "@/assets/images/class3.jpg";
 import axios from "axios";
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function AllClass() {
 
@@ -48,7 +49,7 @@ function AllClass() {
         className="container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:px-12 "
       >
          {classes.map((cl:any)=>(
-           <div className=" w-[90%] h-[480px] group mx-auto dark:bg-[#252525] p-2 bg-white dark:border-0  overflow-hidden rounded-md dark:text-white text-primary ">
+           <div key={cl._id} className=" w-[90%] h-[480px] group mx-auto dark:bg-[#252525] p-2 bg-white dark:border-0  overflow-hidden rounded-md dark:text-white text-primary ">
            <figure className="w-full h-80 group-hover:h-72 transition-all duration-300 dark:bg-[#0a121a] bg-[#f0f5fa] p-2 rounded-md relative overflow-hidden">
              <div
                style={{
@@ -69,18 +70,15 @@ function AllClass() {
              <h1 className="text-xl font-semibold capitalize">
                {cl.name}
              </h1>
-             <p className="text-base leading-[120%]">
-             {cl.description}
-             </p>
-             <a
-               href="#"
+             <Link
+               to={`/classes/${cl._id}`}
                className=" text-base dark:text-white text-blue-900 font-normal  group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 pt-2 flex gap-1  transition-all duration-300  "
              >
                Learn about {cl.name}
                <span>
                  <ChevronRight />
                </span>
-             </a>
+             </Link>
            </article>
          </div>
         ))}

@@ -169,6 +169,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
         console.log(response)
         onupdate()
         form.reset();
+        setIsOpen(false)
         setImageThumbnail(null);
         setImageTutorThumbnail(null);
         setImagePreviewThumbnail(null);
@@ -185,7 +186,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
       </SheetTrigger>
       <SheetContent className="overflow-y-scroll">
         <SheetHeader>
-          <SheetTitle>Create a Course</SheetTitle>
+          <SheetTitle>Update a Course</SheetTitle>
         </SheetHeader>
         <Form {...form}>
           <form
@@ -220,14 +221,22 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
                         htmlFor="class-thumbnail-upload"
                         className="flex flex-col items-center justify-center w-full h-52 border border-dashed rounded-lg cursor-pointer"
                       >
-                        {cclass?.thumbnail ? (
+                        {(cclass?.thumbnail && !imagePreviewThumbnail) ? (
                           <img
                             src={cclass.thumbnail}
                             alt="Preview"
                             className="w-full h-full object-cover rounded-lg"
                           />
                         ):(
-                          <div className="flex flex-col items-center space-y-2">
+                          imagePreviewThumbnail?(
+                            <img
+                            src={imagePreviewThumbnail}
+                            alt="Preview"
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                           
+                          ):(
+                            <div className="flex flex-col items-center space-y-2">
                             <Upload className="h-10 w-10 text-gray-400" />
                             <span className="font-semibold">
                               Click to upload
@@ -236,6 +245,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
                               SVG, PNG, JPG or GIF (MAX. 800x400px)
                             </span>
                           </div>
+                          )
                         )}
                         <Input
                           id="class-thumbnail-upload"
@@ -286,14 +296,22 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
                         htmlFor="tutor-thumbnail-upload"
                         className="flex flex-col items-center justify-center w-full h-52 border border-dashed rounded-lg cursor-pointer"
                       >
-                        {cclass?.tutorthumbnail ? (
+                        {(cclass?.thumbnail && !imagePreviewTutorThumbnail) ? (
                           <img
                             src={cclass.tutorthumbnail}
                             alt="Preview"
                             className="w-full h-full object-cover rounded-lg"
                           />
                         ):(
-                          <div className="flex flex-col items-center space-y-2">
+                          imagePreviewTutorThumbnail?(
+                            <img
+                            src={imagePreviewTutorThumbnail}
+                            alt="Preview"
+                            className="w-full h-full object-cover rounded-lg"
+                          />
+                           
+                          ):(
+                            <div className="flex flex-col items-center space-y-2">
                             <Upload className="h-10 w-10 text-gray-400" />
                             <span className="font-semibold">
                               Click to upload
@@ -302,6 +320,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
                               SVG, PNG, JPG or GIF (MAX. 800x400px)
                             </span>
                           </div>
+                          )
                         )}
                         <Input
                           id="tutor-thumbnail-upload"

@@ -43,7 +43,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
     defaultValues: {
       courseName: "",
       associated_college: "",
-      duration: "",
+      duration: 2,
       academic_requirement: "",
       ielts_requirement: "",
       intake: "",
@@ -99,6 +99,7 @@ export default function Coursescreate({ onupdate }: { onupdate: any }) {
         onupdate();
         // Reset form on success
         form.reset();
+        setIsOpen(false)
         setImage(null);
         setImagePreview(null);
       });

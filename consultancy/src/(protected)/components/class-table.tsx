@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/table";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Classeditor from "./class-edit";
+import Classdelete from "./class-delete";
 export function ClassTable({
   classes,
   onupdate,
@@ -45,6 +46,9 @@ export function ClassTable({
             <TableCell>{cl.duration}</TableCell>
             <TableCell>
               <Classeditor id={cl._id} onupdate={onupdate} />
+            </TableCell>
+            <TableCell>
+              <Classdelete id={cl._id} onupdate={onupdate} />
             </TableCell>
           </TableRow>
         ))}

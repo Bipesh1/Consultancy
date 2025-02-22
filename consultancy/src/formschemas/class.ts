@@ -16,12 +16,12 @@ export const classFormSchema = z.object({
 
   tutorthumbnail: z.string().optional(),
 
-  duration:z.number().min(1, { message: "Duration must provided." }),
+  duration:z.coerce.number().min(1, { message: "Duration must provided." }),
     
     description: z
         .string()
         .min(1, { message: "Description is required." })
-        .max(200, { message: "Description must be at most 20 characters." }),
+        .max(2000, { message: "Description must be at most 2000 characters." }),
 });
 
 

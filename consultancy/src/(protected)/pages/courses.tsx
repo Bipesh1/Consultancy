@@ -29,7 +29,7 @@ export default function CoursesAdmin() {
   return (
     <div className="md:px-5">
       <Coursescreate onupdate={fetchCourses} />
-      <CourseTable courses={courses} />
+      <CourseTable courses={courses} onupdate={fetchCourses} />
     </div>
   );
 }

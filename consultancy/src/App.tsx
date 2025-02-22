@@ -11,6 +11,8 @@ import CoursesAdmin from './(protected)/pages/courses';
 import PublicLayout from './publiclayout';
 import ProtectedLayout from './protectedlayout';
 import CareersAdmin from './(protected)/pages/classes';
+import UserAdmin from './(protected)/pages/users';
+import Classdetails from './pages/classdetails';
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/classes" element={<Class />} />
         <Route path="/course" element={<Course />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path='/classes/:id'element={<Classdetails/>}/>
       </Route>
 
       {/* Protected Routes (No Navigation) */}
@@ -30,6 +33,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/courses" element={<CoursesAdmin />} />
           <Route path="/careers" element={<CareersAdmin/>}/>
+          <Route path="/users" element={<UserAdmin/>}/>
         </Route>
     </Routes>
   );

@@ -32,6 +32,14 @@ export default function Sidebar() {
           <BookOpen /> Classes
         </Button>
       </NavLink>
+      <NavLink
+        to="/users"
+        className="w-full"
+      >
+        <Button className="w-full bg-transparent text-primary hover:text-white flex justify-start hover:scale-105 transition-all">
+          <BookOpen /> Users
+        </Button>
+      </NavLink>
     </div>
   );
 }
