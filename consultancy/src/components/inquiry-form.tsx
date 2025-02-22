@@ -21,7 +21,7 @@ export default function Inquiryform() {
   const { register, handleSubmit, formState: { errors } } = form;
   const onSubmit=(values:z.infer<typeof userFormSchema>)=>{
     startTransition(async()=>{
-      const response= await axios.post("http://localhost:3001/users",values,{
+      const response= await axios.post(`${import.meta.env.VITE_API_URL}/users`,values,{
         withCredentials:true
       })
       if(response.status==201){
