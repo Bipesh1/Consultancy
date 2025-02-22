@@ -49,7 +49,7 @@ export default function Classeditor({ id,onupdate }: { id: string,onupdate:any }
     const fetchClass=async()=>{
 
         startTransition(async () => {
-            const response = await axios.get(`${import.meta.env.VITE_API_URL}/classes${id}`, {
+            const response = await axios.get(`${import.meta.env.VITE_API_URL}/classes/${id}`, {
                 withCredentials: true,
             });
             console.log(response)
