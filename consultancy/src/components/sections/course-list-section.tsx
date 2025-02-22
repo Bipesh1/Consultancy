@@ -15,9 +15,8 @@ export default function CoursesList() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('https://consultancy-tan.vercel.app/courses',{
-          withCredentials: true
-        });
+        const response = await axios.get('https://consultancy-tan.vercel.app/courses');
+
         setCourses(response.data);
       } catch (err) {
         setError('Failed to load courses. Please try again later.');
