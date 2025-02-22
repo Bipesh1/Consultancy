@@ -116,7 +116,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
         };
 
        await axios.put(
-          `http://localhost:3001/courses/${id}`,
+          `${import.meta.env.VITE_API_URL}/courses/${id}`,
           courseData,
           {
             withCredentials: true,
