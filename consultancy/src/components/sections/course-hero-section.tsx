@@ -1,8 +1,6 @@
-import abroad from "@/assets/images/abroad1.jpg"
-import React from 'react';
-import { ArrowRight } from "lucide-react";
+import abroad from "@/assets/images/abroad1.jpg";
+import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import {motion} from "framer-motion"
 
 export default function CourseHeroSection() {
   return (

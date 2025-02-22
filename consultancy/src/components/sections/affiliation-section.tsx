@@ -1,6 +1,5 @@
-import React from 'react'
-import OrbitingCirclesDemo from '../orbiting-circle'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
+import OrbitingCirclesDemo from '../orbiting-circle';
 
 export default function AffiliationSection() {
   return (

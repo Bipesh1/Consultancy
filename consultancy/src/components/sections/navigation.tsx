@@ -1,10 +1,9 @@
 
-import * as React from "react";
+import logo from "@/assets/images/1.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "@/assets/images/1.png";
-import SocialLinks from "./social-links";
 import MobileSidebar from "./mobile-sidebar";
+import SocialLinks from "./social-links";
 
 export default function Navigation() {
   

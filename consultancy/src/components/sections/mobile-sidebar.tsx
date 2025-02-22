@@ -1,8 +1,8 @@
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { ExternalLink, FileUser, Home, Menu } from "lucide-react";
-import SocialLinks from "./social-links";
 import logo from "@/assets/images/1.png";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import SocialLinks from "./social-links";
 
 export default function MobileSidebar() {
   const navigations = [

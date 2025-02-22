@@ -1,5 +1,4 @@
-import React from 'react';
-import { Quote, UserCircle2 } from "lucide-react";
+import { UserCircle2 } from "lucide-react";
 
 export default function FromOurTutorSection({ classdetails }: { classdetails: any }) {
   return (

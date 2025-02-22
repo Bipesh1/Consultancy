@@ -1,7 +1,6 @@
-import React from "react";
-import { Sparkles } from "../ui/sparkle";
-import { Link } from "react-router-dom";
 import logo from "@/assets/images/1.png";
+import { Link } from "react-router-dom";
+import { Sparkles } from "../ui/sparkle";
 
 import SocialLinks from "./social-links";
 

@@ -1,7 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, Users, Star, BookOpen } from 'lucide-react';
-import Button from '../button';
+import { BookOpen, Clock, Star, Users } from 'lucide-react';
 
 export default function ClassDetailsSection({ classdetails }: { classdetails: any }) {
   return (

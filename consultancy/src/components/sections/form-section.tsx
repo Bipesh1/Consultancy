@@ -1,4 +1,3 @@
-import React from 'react'
 import formimage from "@/assets/images/formimage.png"
 import Inquiryform from '../inquiry-form'
 

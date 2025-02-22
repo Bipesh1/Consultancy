@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import { LayoutGrid } from "../ui/layout-grid";
 import destination1 from "@/assets/images/destination1.webp";
 import destination2 from "@/assets/images/destination2.webp";
 import destination3 from "@/assets/images/destination3.jpg";
 import destination4 from "@/assets/images/destination4.jpeg";
 import { motion } from "framer-motion";
+import { LayoutGrid } from "../ui/layout-grid";
 
 
 export default function StudyDestination() {

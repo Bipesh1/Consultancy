@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Search, BookOpen, GraduationCap, Filter, Clock, MapPin } from 'lucide-react';
+import { BookOpen, Clock, Filter, GraduationCap, MapPin, Search } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 

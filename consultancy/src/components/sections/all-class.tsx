@@ -1,9 +1,6 @@
-import React, { useEffect, useState, useTransition } from "react";
-import { ArrowBigDown, ArrowRight, ChevronRight, Heart } from "lucide-react";
-import class1 from "@/assets/images/class1.jpeg";
-import class2 from "@/assets/images/class2.avif";
-import class3 from "@/assets/images/class3.jpg";
 import axios from "axios";
+import { ChevronRight } from "lucide-react";
+import { useEffect, useState, useTransition } from "react";
 
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -11,7 +8,7 @@ import { Link } from "react-router-dom";
 function AllClass() {
 
   const [classes,setClasses]= useState<any>([])
-  const [isPending,startTransition]= useTransition()
+  const [_,startTransition]= useTransition()
   useEffect(()=>{
       startTransition(async()=>{
         const response= await axios.get("http://localhost:3001/classes",{

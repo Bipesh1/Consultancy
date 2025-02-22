@@ -1,5 +1,5 @@
-import React from 'react'
 import Autoplay from "embla-carousel-autoplay";
+import React from 'react';
 
 import {
   Carousel,
@@ -8,12 +8,12 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import course1 from '../../assets/images/course1.webp'
-import course2 from '../../assets/images/course2.webp'
-import course3 from '../../assets/images/course3.jpg'
-import course4 from '../../assets/images/courrse4.jpg'
-import {motion} from 'framer-motion'
-import { FileQuestion, Search, Eye } from "lucide-react";
+import { motion } from 'framer-motion';
+import { FileQuestion, Search } from "lucide-react";
+import course4 from '../../assets/images/courrse4.jpg';
+import course1 from '../../assets/images/course1.webp';
+import course2 from '../../assets/images/course2.webp';
+import course3 from '../../assets/images/course3.jpg';
 
 const slideData = [
   {

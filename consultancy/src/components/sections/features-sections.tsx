@@ -1,5 +1,4 @@
-import { useInView } from "react-intersection-observer";
-import { BookA,Landmark, Award, BookOpenCheck, Phone, BookOpen } from "lucide-react";
+import { Award, BookA, BookOpen, BookOpenCheck, Landmark, Phone } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -42,7 +41,7 @@ const features = [
   },
 ];
 
-function FeatureCard({ feature, index }: { feature: (typeof features)[0]; index: number }) {
+function FeatureCard({ feature}: { feature: (typeof features)[0]; index: number }) {
 
 
   // const IconComponent = LucideIcons[feature.icon];

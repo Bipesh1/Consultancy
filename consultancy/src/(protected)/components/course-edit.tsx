@@ -1,18 +1,4 @@
-import React from "react";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { LoaderCircle } from "lucide-react";
-import { Save } from "lucide-react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Upload } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -21,20 +7,29 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { courseFormSchema } from "@/formschemas/course";
-import { z } from "zod";
 import { Input } from "@/components/ui/input";
-import { useForm } from "react-hook-form";
+import { Label } from "@/components/ui/label";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from "@/components/ui/sheet";
+import { courseFormSchema } from "@/formschemas/course";
 import { supabase } from "@/lib/supabase";
-import { useState,useEffect } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { LoaderCircle, Save, Upload } from "lucide-react";
+import { useEffect, useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
 import slugify from "react-slugify";
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-import { useTransition} from "react";
+import { z } from "zod";
 
 export default function Courseedit({ onupdate,id }: { onupdate: any,id:string }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [imagePreview, setImagePreview] = useState<string | null>();
+  const [_, setImagePreview] = useState<string | null>();
   const [isPending, startTransition] = useTransition();
   const [image, setImage] = useState<File | undefined | null>();
   const [course,setCourse]=useState<any>()
@@ -94,7 +89,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
         const uniqueFileName = `${slugifiedName}-${uniqueId}.png`;
 
         // Upload image
-        const { data: uploadData, error: uploadError } = await supabase.storage
+        const {  error: uploadError } = await supabase.storage
           .from("classes")
           .upload(`class/${uniqueFileName}`, image);
 
@@ -120,7 +115,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
           thumbnail: thumbnailUrl,
         };
 
-        const response = await axios.put(
+       await axios.put(
           `http://localhost:3001/courses/${id}`,
           courseData,
           {
@@ -169,7 +164,7 @@ export default function Courseedit({ onupdate,id }: { onupdate: any,id:string })
             <FormField
               control={form.control}
               name="thumbnail"
-              render={({ field }) => (
+              render={() => (
                 <FormItem>
                   <FormLabel>Category thumbnail</FormLabel>
                   <FormControl>
