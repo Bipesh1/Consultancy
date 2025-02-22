@@ -26,7 +26,7 @@ app.use("/classes", classRouter);
 app.use("/users", userRouter);
 
 // Serve static files from the client build directory
-const clientBuildPath = path.join(__dirname, "../consultancy");
+const clientBuildPath = path.join(__dirname, "../consultancy/dist");
 app.use(express.static(clientBuildPath));
 console.log("this is " + clientBuildPath)
 console.log("hello")
